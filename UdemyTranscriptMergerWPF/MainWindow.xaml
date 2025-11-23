@@ -1,0 +1,182 @@
+﻿<Window x:Class="UdemyTranscriptMergerWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:helpers="clr-namespace:UdemyTranscriptMergerWPF.Helpers"
+        Title="Udemy Transcript Merger"
+        Width="1300" Height="800"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="{DynamicResource BackgroundColorBrush}">
+
+    <Grid>
+
+        <!-- ================= HEADER ================= -->
+        <Border Height="56"
+                Background="{DynamicResource PanelColorBrush}"
+                Padding="16 0"
+                Effect="{DynamicResource Elevation2}"
+                MouseDown="Window_MouseDown"
+                VerticalAlignment="Top">
+            <DockPanel>
+
+                <!-- TITLE -->
+                <TextBlock Text="Udemy Transcript Merger"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           VerticalAlignment="Center"
+                           Foreground="{DynamicResource ForegroundColorBrush}"
+                           DockPanel.Dock="Left"/>
+
+                <!-- BUTTONS -->
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Right">
+
+                    <Button Style="{StaticResource IconButtonStyle}" 
+                            ToolTip="Toggle Theme"
+                            Click="btnToggleTheme_Click">
+                        <TextBlock Text="🌓"/>
+                    </Button>
+
+                    <Button Style="{StaticResource IconButtonStyle}"
+                            Margin="8 0 0 0"
+                            Click="Minimize_Click">
+                        <TextBlock Text="—" FontSize="20"/>
+                    </Button>
+
+                    <Button Style="{StaticResource IconButtonStyle}"
+                            Margin="8 0 0 0"
+                            Click="Close_Click">
+                        <TextBlock Text="×" FontSize="20"/>
+                    </Button>
+
+                </StackPanel>
+
+            </DockPanel>
+        </Border>
+
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <Grid Margin="24,80,24,24">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="360"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <!-- ************* LEFT PANEL **************** -->
+            <Border Background="{DynamicResource PanelColorBrush}"
+                    CornerRadius="20"
+                    Padding="20"
+                    Effect="{DynamicResource Elevation1}">
+
+                <StackPanel>
+
+                    <TextBlock Text="TXT Files"
+                               FontSize="26"
+                               FontWeight="Bold"
+                               Foreground="{DynamicResource ForegroundColorBrush}"
+                               Margin="0 0 0 16"/>
+
+                    <!-- Buttons -->
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="Add +"
+                                Style="{StaticResource PrimaryButtonStyle}"
+                                Width="140" Height="44"
+                                Click="btnAdd_Click"/>
+
+                        <Button Content="Up"
+                                Margin="12 0 0 0"
+                                Width="70" Height="44"
+                                Style="{StaticResource SecondaryButtonStyle}"
+                                Click="btnUp_Click"/>
+
+                        <Button Content="Down"
+                                Margin="12 0 0 0"
+                                Width="80" Height="44"
+                                Style="{StaticResource SecondaryButtonStyle}"
+                                Click="btnDown_Click"/>
+                    </StackPanel>
+
+                    <!-- List -->
+                    <ListBox x:Name="lstFiles"
+                             Margin="0 20 0 0"
+                             Height="500"
+                             Background="{DynamicResource BoxColorBrush}"
+                             Foreground="{DynamicResource ForegroundColorBrush}"
+                             BorderThickness="0"
+                             Padding="10"
+                             AllowDrop="True"
+                             Drop="lstFiles_Drop"
+                             SelectionChanged="lstFiles_SelectionChanged"/>
+                </StackPanel>
+
+            </Border>
+
+
+
+
+            <!-- ************* RIGHT PANEL **************** -->
+            <Grid Grid.Column="1"
+                  Margin="24 0 0 0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="260"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+
+                <Border Background="{DynamicResource BoxColorBrush}"
+                        CornerRadius="20"
+                        Padding="16"
+                        Effect="{DynamicResource Elevation1}">
+                    <TextBox x:Name="txtPreview"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Foreground="{DynamicResource ForegroundColorBrush}"
+                             FontSize="16"
+                             TextWrapping="Wrap"
+                             IsReadOnly="True"
+                             VerticalScrollBarVisibility="Auto"/>
+                </Border>
+
+
+                <Border Grid.Row="1"
+                        Background="{DynamicResource BoxColorBrush}"
+                        CornerRadius="20"
+                        Padding="16"
+                        Margin="0 16 0 0"
+                        Effect="{DynamicResource Elevation1}">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <ItemsControl x:Name="logList"
+                                      ItemTemplate="{StaticResource ChatBubbleTemplate}"/>
+                    </ScrollViewer>
+                </Border>
+
+
+                <StackPanel Grid.Row="2"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Margin="0 20 0 0">
+
+                    <Button Content="Export PDF"
+                            Width="170" Height="48"
+                            Style="{StaticResource PrimaryButtonStyle}"
+                            Click="btnExportPdf_Click"/>
+
+                    <Button Content="Export Word"
+                            Width="170" Height="48"
+                            Margin="16 0 0 0"
+                            Style="{StaticResource PrimaryButtonStyle}"
+                            Click="btnExportWord_Click"/>
+
+                </StackPanel>
+
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+
+</Window>
