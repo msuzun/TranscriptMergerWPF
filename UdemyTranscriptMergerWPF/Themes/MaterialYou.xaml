@@ -29,18 +29,36 @@
     <Color x:Key="md.sys.color.outline.dark">#707070</Color>
 
 
-    <!-- ============================================================
-         BRUSHES (THEME SWITCHABLE)
-         ============================================================ -->
-    <SolidColorBrush x:Key="PrimaryBrush" Color="{DynamicResource md.sys.color.primary}"/>
-    <SolidColorBrush x:Key="PrimaryContainerBrush" Color="{DynamicResource md.sys.color.primaryContainer}"/>
-    <SolidColorBrush x:Key="ForegroundPrimaryBrush" Color="{DynamicResource md.sys.color.onPrimary}"/>
+    <!-- LIGHT BRUSHES -->
+    <SolidColorBrush x:Key="PrimaryBrush.light" Color="{StaticResource md.sys.color.primary}"/>
+    <SolidColorBrush x:Key="PrimaryContainerBrush.light" Color="{StaticResource md.sys.color.primaryContainer}"/>
+    <SolidColorBrush x:Key="ForegroundPrimaryBrush.light" Color="{StaticResource md.sys.color.onPrimary}"/>
 
-    <SolidColorBrush x:Key="BackgroundColorBrush" Color="{DynamicResource md.sys.color.surface}"/>
-    <SolidColorBrush x:Key="PanelColorBrush" Color="{DynamicResource md.sys.color.surfaceContainerHigh}"/>
-    <SolidColorBrush x:Key="BoxColorBrush" Color="{DynamicResource md.sys.color.surfaceContainerHigh}"/>
-    <SolidColorBrush x:Key="ForegroundColorBrush" Color="{DynamicResource md.sys.color.onSurface}"/>
-    <SolidColorBrush x:Key="OutlineBrush" Color="{DynamicResource md.sys.color.outline}"/>
+    <SolidColorBrush x:Key="BackgroundColorBrush.light" Color="{StaticResource md.sys.color.surface}"/>
+    <SolidColorBrush x:Key="PanelColorBrush.light" Color="{StaticResource md.sys.color.surfaceContainerHigh}"/>
+    <SolidColorBrush x:Key="BoxColorBrush.light" Color="{StaticResource md.sys.color.surfaceContainerHigh}"/>
+    <SolidColorBrush x:Key="ForegroundColorBrush.light" Color="{StaticResource md.sys.color.onSurface}"/>
+    <SolidColorBrush x:Key="OutlineBrush.light" Color="{StaticResource md.sys.color.outline}"/>
+
+
+    <!-- DARK BRUSHES -->
+    <SolidColorBrush x:Key="PrimaryBrush.dark" Color="{StaticResource md.sys.color.primary.dark}"/>
+    <SolidColorBrush x:Key="PrimaryContainerBrush.dark" Color="{StaticResource md.sys.color.primaryContainer.dark}"/>
+    <SolidColorBrush x:Key="ForegroundPrimaryBrush.dark" Color="{StaticResource md.sys.color.onPrimary.dark}"/>
+
+    <SolidColorBrush x:Key="BackgroundColorBrush.dark" Color="{StaticResource md.sys.color.surface.dark}"/>
+    <SolidColorBrush x:Key="PanelColorBrush.dark" Color="{StaticResource md.sys.color.surfaceContainerHigh.dark}"/>
+    <SolidColorBrush x:Key="BoxColorBrush.dark" Color="{StaticResource md.sys.color.surfaceContainerHigh.dark}"/>
+    <SolidColorBrush x:Key="ForegroundColorBrush.dark" Color="{StaticResource md.sys.color.onSurface.dark}"/>
+    <SolidColorBrush x:Key="OutlineBrush.dark" Color="{StaticResource md.sys.color.outline.dark}"/>
+
+    <!-- ACTIVE (currently selected theme) -->
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource md.sys.color.primary}"/>
+    <SolidColorBrush x:Key="BackgroundColorBrush" Color="{StaticResource md.sys.color.surface}"/>
+    <SolidColorBrush x:Key="PanelColorBrush" Color="{StaticResource md.sys.color.surfaceContainerHigh}"/>
+    <SolidColorBrush x:Key="BoxColorBrush" Color="{StaticResource md.sys.color.surfaceContainerHigh}"/>
+    <SolidColorBrush x:Key="ForegroundColorBrush" Color="{StaticResource md.sys.color.onSurface}"/>
+    <SolidColorBrush x:Key="OutlineBrush" Color="{StaticResource md.sys.color.outline}"/>
 
 
     <!-- ============================================================
